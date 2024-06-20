@@ -376,23 +376,3 @@ if ( ! function_exists( 'siteorigin_north_wc_cart_wrapper_close' ) ) {
 	}
 }
 add_action( 'woocommerce_after_cart_table', 'siteorigin_north_wc_cart_wrapper_close' );
-
-function siteorigin_settings_override_add_to_cart_btn( $btn, $product, $args = [] ) {
-	$args = wp_parse_args( $args, [
-		'quantity' => 1,
-		'class' => 'button'
-	] );
-
-	$new_btn = sprintf(
-		'<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s"><span class="north-icon-cart" aria-hidden="true"></span> %s</a>',
-		esc_url( $product->add_to_cart_url() ),
-		esc_attr( $args['quantity'] ),
-		esc_attr( $product->get_id()),
-		esc_attr( $product->get_sku() ),
-		esc_attr( $args['class ']),
-		esc_html( $product->add_to_cart_text() )
-	);
-
-	return $new_btn;
-}
-add_filter( 'woocommerce_loop_add_to_cart_link', 'siteorigin_settings_override_add_to_cart_btn', 10, 3 );
