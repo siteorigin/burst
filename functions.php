@@ -312,6 +312,7 @@ if ( ! function_exists( 'siteorigin_north_scripts' ) ) {
 
 		// Add settings variables used by main theme JS.
 		$logo_sticky_scale = apply_filters( 'siteorigin_north_logo_sticky_scale', 0.755 );
+		$sticky_topbar = apply_filters( 'siteorigin_north_sticky_topbar', false );
 		wp_localize_script(
 			'siteorigin-north-script',
 			'siteoriginNorth',
@@ -320,6 +321,7 @@ if ( ! function_exists( 'siteorigin_north_scripts' ) ) {
 				'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
 				'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
 				'fitvids' => siteorigin_setting( 'responsive_fitvids' ),
+				'stickyTopbar' => $sticky_topbar,
 			)
 		);
 
