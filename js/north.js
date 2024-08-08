@@ -402,22 +402,23 @@
 				$tb = $( '#topbar' ),
 				$wpab = $( '#wpadminbar' );
 
-				const whenToStickyMh = function() {
-					const wpabMobile = $( window ).width() <= 600;
-					const wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
-					const tbHeight = $tb.length && siteoriginNorth.stickyTopbar ? $tb.outerHeight() : 0;
+			var whenToStickyMh = function() {
+				var wpabMobile = $( window ).width() <= 600;
+				var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
+				var tbHeight = $tb.length && siteoriginNorth.stickyTopbar ? $tb.outerHeight() : 0;
 
-					return wpabHeight + tbHeight;
-				};
+				return wpabHeight + tbHeight;
+			};
 
-				// Sticky header shadow.
-				var smShadow = function() {
-					if ( $( window ).scrollTop() > whenToStickyMh ) {
-						$( $mh ).addClass( 'floating' );
-					} else {
-						$( $mh ).removeClass( 'floating' );
-					}
-				};
+			// Sticky header shadow.
+			var smShadow = function() {
+				if ( $( window ).scrollTop() > whenToStickyMh ) {
+					$( $mh ).addClass( 'floating' );
+				} else {
+					$( $mh ).removeClass( 'floating' );
+				}
+			};
+
 			smShadow();
 			$( window ).on( 'scroll', smShadow );
 
@@ -474,8 +475,8 @@
 				smSetup();
 				$( window ).on( 'resize scroll', smSetup );
 			} else {
-				const tbMhStickyPosition = function() {
-					const wpabMobile = $( window ).width() <= 600;
+				var tbMhStickyPosition = function() {
+					var wpabMobile = $( window ).width() <= 600;
 					$tb.css( {
 						'position': 'sticky',
 						'top': $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0,
