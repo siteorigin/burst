@@ -104,6 +104,39 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.3 - 26 June 2024 =
+* Updated Tested up to and required PHP tags.
+* WooCommerce: Replaced Add to Cart template with filter.
+* Updated SiteOrigin Settings.
+
+= 1.20.2 - 11 February 2024 =
+* FlexSlider: Removed unused font inclusion.
+* Updated Tested up to tag.
+* Updated SiteOrigin Settings submodule.
+
+= 1.20.1 - 15 October 2023 =
+* Updated SiteOrigin Settings.
+
+= 1.20.0 - July 25 2023 =
+* Removed the "cart.php" file in favor of using hooks for the WooCommerce cart page.
+* Adjusted the action buttons in the WC Cart for better structuring and mobile responsiveness.
+* Added new styles for the `.wc-buttons` class in the WC Cart.
+* Updated the styling of the cart buttons in WooCommerce to accommodate a sidebar and to be full-width when the sidebar is not present.
+* Added new functions `siteorigin_north_wc_cart_contents_after` and `siteorigin_north_wc_cart_contents` to modify the structure of the cart contents table in WooCommerce.
+
+= 1.19.18 - 08 July 2023 =
+* WooCommerce: Updated cart.php for WC `7.8.0`.
+* Updated SiteOrigin Settings.
+
+= 1.19.17 - 18 May 2023 =
+* Breadcrumbs: Improved long breadcrumb display.
+* Changed custom logo wrapper from `div` to `span` tag.
+* Updated SiteOrigin Settings.
+
+= 1.19.16 - 26 April 2023 =
+* Resolved Settings missing text domain.
+* WooCommerce: Correctly output Apply Coupon text.
+
 = 1.19.15 - 09 April 2023 =
 * Moved breadcrumb functionality to SiteOrigin Settings framework.
 
