@@ -471,7 +471,7 @@
 				}
 			}
 
-			if ( whenToStickyMh() === 0 ) {
+			if ( whenToStickyMh() === 0 || ! siteoriginNorth.stickyTopbar ) {
 				smSetup();
 				$( window ).on( 'resize scroll', smSetup );
 			} else {
