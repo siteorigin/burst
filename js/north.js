@@ -124,7 +124,7 @@
 			$( this ).on( 'click touchend', function( e ) {
 				var link = $( this );
 				e.stopPropagation();
-				
+
 				if ( e.type == 'click' ) {
 					return;
 				}
@@ -402,14 +402,23 @@
 				$tb = $( '#topbar' ),
 				$wpab = $( '#wpadminbar' );
 
+			var whenToStickyMh = function() {
+				var wpabMobile = $( window ).width() <= 600;
+				var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
+				var tbHeight = $tb.length && siteoriginNorth.stickyTopbar ? $tb.outerHeight() : 0;
+
+				return wpabHeight + tbHeight;
+			};
+
 			// Sticky header shadow.
 			var smShadow = function() {
-				if ( $( window ).scrollTop() > 0 ) {
+				if ( $( window ).scrollTop() > whenToStickyMh ) {
 					$( $mh ).addClass( 'floating' );
 				} else {
 					$( $mh ).removeClass( 'floating' );
 				}
 			};
+
 			smShadow();
 			$( window ).on( 'scroll', smShadow );
 
@@ -430,7 +439,13 @@
 					$( 'body' ).removeClass( 'topbar-out' );
 				}
 
-				if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+				if (
+					$( 'body' ).hasClass( 'no-topbar' ) ||
+					(
+						! $( 'body' ).hasClass( 'no-topbar' ) &&
+						$( 'body' ).hasClass( 'topbar-out' )
+					)
+				) {
 					$mh.css( 'position', 'fixed' );
 				} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
 					$mh.css( 'position', 'absolute' );
@@ -455,9 +470,27 @@
 					$mh.removeClass( 'mobile-sticky-menu' );
 				}
 			}
-			
-			smSetup();
-			$( window ).on( 'resize scroll', smSetup );
+
+			if ( whenToStickyMh() === 0 || ! siteoriginNorth.stickyTopbar ) {
+				smSetup();
+				$( window ).on( 'resize scroll', smSetup );
+			} else {
+				var tbMhStickyPosition = function() {
+					var wpabMobile = $( window ).width() <= 600;
+					$tb.css( {
+						'position': 'sticky',
+						'top': $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0,
+					} );
+
+					$mh.css( {
+						'position': 'sticky',
+						'top': whenToStickyMh(),
+					} );
+				};
+
+				tbMhStickyPosition();
+				$( window ).on( 'resize', tbMhStickyPosition );
+			}
 		}
 
 		// Adjust for sticky header when linking from external anchors.
