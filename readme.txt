@@ -104,6 +104,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.4 - 18 September 2024 =
+* WooCommerce: Updated pagination template version number.
+* Updated SiteOrigin Settings.
+* Developer: Added `siteorigin_north_sticky_topbar`.
+
 = 1.20.3 - 26 June 2024 =
 * Updated Tested up to and required PHP tags.
 * WooCommerce: Replaced Add to Cart template with filter.
