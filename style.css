@@ -1429,7 +1429,7 @@ body.page-layout-stripped #main.site-main {
     #masthead .site-branding img.alt-logo-scroll {
       display: none; }
     #masthead.floating img.alt-logo-scroll {
-      display: block; }
+      display: inline-block; }
   #masthead .site-branding,
   #masthead .main-navigation {
     display: table-cell;
