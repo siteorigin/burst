@@ -412,15 +412,14 @@
 
 			// Sticky header shadow.
 			var smShadow = function() {
-				if ( $( window ).scrollTop() > whenToStickyMh ) {
+				if ( $( window ).scrollTop() > whenToStickyMh() ) {
 					$( $mh ).addClass( 'floating' );
 				} else {
 					$( $mh ).removeClass( 'floating' );
 				}
 			};
 
-			smShadow();
-			$( window ).on( 'scroll', smShadow );
+			$( window ).on( 'scroll', smShadow ).trigger( 'scroll' );
 
 			var smSetup = function() {
 
