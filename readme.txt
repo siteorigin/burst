@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.6 - 14 November 2024 =
+* Updated WooCommerce Form Checkout template to version 9.4.0.
+
 = 1.20.5 - 17 October 2024 =
 * Header: Restored the `floating` class to the masthead on scroll.
 * Header: Ensured the sticky logo is always correctly aligned.
