@@ -291,6 +291,40 @@
 				}
 			}
 
+			td.actions {
+
+				.coupon,
+				&.wc-buttons .button,
+				.cart-buttons {
+					margin-top: 0;
+				}
+
+				.cart-buttons {
+					display: flex;
+					gap: .25em;
+
+					a {
+						text-decoration: none;
+					}
+				}
+
+				@media (max-width: 768px) {
+
+					.cart-buttons {
+						flex-direction: column;
+					}
+
+					.actions,
+					.cart-buttons {
+						gap: 1em;
+					}
+
+					#coupon_code {
+						margin-bottom: 0.5em;
+					}
+				}
+			}
+
 		}
 	}
 

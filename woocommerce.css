@@ -542,6 +542,23 @@
     .woocommerce table.shop_table .wc-buttons .button.checkout-button,
     .woocommerce table.shop_table .wc-buttons .coupon .button {
       margin-top: 10px; } }
+  .woocommerce table.shop_table td.actions .coupon,
+  .woocommerce table.shop_table td.actions.wc-buttons .button,
+  .woocommerce table.shop_table td.actions .cart-buttons {
+    margin-top: 0; }
+  .woocommerce table.shop_table td.actions .cart-buttons {
+    display: flex;
+    gap: .25em; }
+    .woocommerce table.shop_table td.actions .cart-buttons a {
+      text-decoration: none; }
+  @media (max-width: 768px) {
+    .woocommerce table.shop_table td.actions .cart-buttons {
+      flex-direction: column; }
+    .woocommerce table.shop_table td.actions .actions,
+    .woocommerce table.shop_table td.actions .cart-buttons {
+      gap: 1em; }
+    .woocommerce table.shop_table td.actions #coupon_code {
+      margin-bottom: 0.5em; } }
 
 .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button {
   background: #c75d5d;
