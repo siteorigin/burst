@@ -362,6 +362,27 @@ article.page {
 	margin: 0 0 1.5em;
 }
 
+/*--------------------------------------------------------------
+## Author Archive.
+--------------------------------------------------------------*/
+.archive.author {
+
+	// If the author has a bio set, alter page heading spacing.
+	.page-header:has(.taxonomy-description) {
+
+		.page-title {
+			margin-bottom: 12.5px;
+		}
+
+		.taxonomy-description {
+			margin-bottom: 25px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Search Results.
+--------------------------------------------------------------*/
 .search-results {
 
 	article.post {

@@ -1942,6 +1942,18 @@ article.page {
   clear: both;
   margin: 0 0 1.5em; }
 
+/*--------------------------------------------------------------
+## Author Archive.
+--------------------------------------------------------------*/
+.archive.author .page-header:has(.taxonomy-description) .page-title {
+  margin-bottom: 12.5px; }
+
+.archive.author .page-header:has(.taxonomy-description) .taxonomy-description {
+  margin-bottom: 25px; }
+
+/*--------------------------------------------------------------
+## Search Results.
+--------------------------------------------------------------*/
 .search-results article.post {
   clear: both;
   margin-bottom: 35px;
