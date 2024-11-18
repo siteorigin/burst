@@ -55,26 +55,19 @@
 	<?php } ?>
 
 	<div class="entry-content">
-		<?php if ( is_singular() ) { ?>
-			<?php echo apply_filters( 'the_content', siteorigin_north_filter_video( get_the_content() ) ); // Display the content without first video?>
-		<?php } elseif ( siteorigin_setting( 'blog_post_content' ) == 'content' ) { ?>
-			<?php the_content( sprintf(
-	siteorigin_setting( 'blog_read_more_text' ) . esc_html__( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
-	get_the_title()
-) ); ?>
-		<?php } else { ?>
-			<?php the_excerpt(); ?>
-			<?php if ( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
-				<a href="<?php the_permalink(); ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ); ?><span class="screen-reader-text">More Tag</span></a>
-			<?php } ?>
-		<?php } ?>
-
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
-				'after'  => '</div>',
-			) );
-?>
+		if ( is_singular() ) {
+			// Display the content without first video.
+			echo apply_filters( 'the_content', siteorigin_north_filter_video( get_the_content() ) );
+		} else {
+			siteorigin_north_post_content();
+		}
+
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
+			'after'  => '</div>',
+		) );
+		?>
 	</div><!-- .entry-content -->
 
 	<?php if ( is_singular() ) { ?>
