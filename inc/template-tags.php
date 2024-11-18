@@ -602,7 +602,7 @@ if ( ! function_exists( 'siteorigin_north_archive_post_content' ) ) {
 	 * the post is singular.
 	 */
 	function siteorigin_north_post_content() {
-		$read_more_text = siteorigin_setting( 'blog_read_more_text' ) ?? __( 'Read More', 'siteorigin-north' );
+		$read_more_text = ! empty( siteorigin_setting( 'blog_read_more_text' ) ) ? siteorigin_setting( 'blog_read_more_text' ) : __( 'Read More', 'siteorigin-north' );
 
 		if ( is_singular() || siteorigin_setting( 'blog_post_content' ) == 'content' ) {
 			the_content( $read_more_text );
