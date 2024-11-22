@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.6
+Tested up to: 6.7
 Requires at least: 4.7
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -103,6 +103,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.20.7 - 22 November 2024 =
+* WooCommerce: Improved cart action button spacing.
+* Author Archive: Adjusted the title spacing if a bio is set.
+* Improved Read More handling: One central function for handling the output of post content, and the read more. Removed Redundent Screen Reader tag from read more link.
 
 = 1.20.6 - 14 November 2024 =
 * Updated WooCommerce Form Checkout template to version 9.4.0.

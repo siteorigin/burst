@@ -32,26 +32,13 @@
 
 	<div class="entry-content">
 		<?php
-			if ( siteorigin_setting( 'blog_post_content' ) == 'content' ) {
-				the_content( sprintf(
-					siteorigin_setting( 'blog_read_more_text' ) . __( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
-					get_the_title()
-				) );
-			} else {
-				the_excerpt();
+		siteorigin_north_post_content();
 
-				if ( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
-					<a href="<?php the_permalink(); ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ); ?><span class="screen-reader-text">More Tag</span></a>
-				<?php }
-				}
-?>
-
-		<?php
-	wp_link_pages( array(
-		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
-		'after'  => '</div>',
-	) );
-?>
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
+			'after'  => '</div>',
+		) );
+		?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

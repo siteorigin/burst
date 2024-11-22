@@ -595,3 +595,27 @@ if ( ! function_exists( 'siteorigin_north_strip_image' ) ) {
 		return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 	}
 }
+
+if ( ! function_exists( 'siteorigin_north_archive_post_content' ) ) {
+	/**
+	 * Outputs the post content or excerpt based on thheme settings, and whether
+	 * the post is singular.
+	 */
+	function siteorigin_north_post_content() {
+		$read_more_text = ! empty( siteorigin_setting( 'blog_read_more_text' ) ) ? siteorigin_setting( 'blog_read_more_text' ) : __( 'Read More', 'siteorigin-north' );
+
+		if ( is_singular() || siteorigin_setting( 'blog_post_content' ) == 'content' ) {
+			the_content( $read_more_text );
+			return;
+		}
+
+		the_excerpt();
+
+		if ( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
+			<a href="<?php esc_url( get_the_permalink() ); ?>" class="more-link">
+				<?php echo esc_html( $read_more_text ); ?>
+			</a>
+			<?php
+		}
+	}
+}
