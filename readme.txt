@@ -104,6 +104,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.7 - 22 November 2024 =
+* WooCommerce: Improved cart action button spacing.
+* Author Archive: Adjusted the title spacing if a bio is set.
+* Improved Read More handling: One central function for handling the output of post content, and the read more. Removed Redundent Screen Reader tag from read more link.
+
 = 1.20.6 - 14 November 2024 =
 * Updated WooCommerce Form Checkout template to version 9.4.0.
 
