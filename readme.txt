@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.8 - 4 December 2024 =
+* Resolved Read More button linking when Archive Post Content set to Post Excerpt.
+
 = 1.20.7 - 22 November 2024 =
 * WooCommerce: Improved cart action button spacing.
 * Author Archive: Adjusted the title spacing if a bio is set.
